@@ -1,0 +1,35 @@
+﻿@* Model tanımlanıyor... *@
+@model CustomerOrderViewModel; 
+
+
+@*Müşteri bilgileri yazdırılıyor*@
+<span>Müşterinin</span><br />
+<span>Id..:@Model.customer.Id</span><br />
+<span>Adı..:@Model.customer.FirstName</span><br />
+<span>Soyadı..:@Model.customer.LastName</span><br />
+<span>E-mail..:@Model.customer.Email</span><br />
+
+
+@* tablo içinde sipariş bilgileri ekrana yazdırılıyor *@
+
+<table>
+    <tr>
+        <td>ID </td>
+        <td>Ürün Adı</td>
+        <td>Fiyat</td>
+        <td>Miktar</td>
+
+    </tr>
+    @foreach(var order in Model.orders)
+        {
+        <tr>
+ 
+            <td>@order.Id </td>
+            <td>@order.ProductName </td>
+            <td>@order.Price  </td>
+            <td>@order.Quantity  </td>
+            
+        </tr>
+        }
+
+</table>
